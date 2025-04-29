@@ -20,6 +20,9 @@ def Ticker(symbol: str):
 def Depth(symbol: str):
     return requests.get(url=f'{BP_BASE_URL}api/v1/depth?symbol={symbol}').json()
 
+def PositionQuery():
+    return requests.get(url=f'{BP_BASE_URL}api/v1/position').json()
+
 
 def KLines(symbol: str, interval: str, startTime: int = 0, endTime: int = 0):
     url = f'{BP_BASE_URL}api/v1/klines?symbol={symbol}&interval={interval}'
